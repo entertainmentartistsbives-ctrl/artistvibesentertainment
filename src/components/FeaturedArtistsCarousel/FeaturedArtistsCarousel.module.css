@@ -293,11 +293,16 @@
   .carouselCards {
     grid-template-columns: repeat(3, 1fr);
   }
+
+  .header {
+    margin-bottom: 3.5rem;
+  }
 }
 
 @media (max-width: 768px) {
   .carouselCards {
     grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
   }
 
   .carouselRow {
@@ -308,10 +313,122 @@
     width: 2rem;
     height: 2rem;
   }
+
+  .header {
+    margin-bottom: 2.5rem;
+  }
+
+  /* ── Smaller cards on tablet ── */
+  .artistCard {
+    padding: 2.5rem 1rem;
+    min-height: 320px;
+    border-radius: 1.5rem;
+  }
+
+  .artistAvatar {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 1.5rem;
+  }
+
+  .artistName {
+    font-size: 1.05rem;
+  }
+
+  .artistCategory {
+    font-size: 0.7rem;
+  }
+
+  .carouselDots {
+    margin-top: 1.5rem;
+  }
 }
 
 @media (max-width: 640px) {
   .carouselCards {
     grid-template-columns: 1fr;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  /* ── Compact card for single-column mobile ── */
+  .artistCard {
+    padding: 2rem 1rem;
+    min-height: 260px;
+    border-radius: 1.25rem;
+    flex-direction: row;
+    gap: 1.25rem;
+    justify-content: flex-start;
+  }
+
+  .artistAvatar {
+    width: 90px;
+    height: 90px;
+    margin-bottom: 0;
+    flex-shrink: 0;
+  }
+
+  .artistCardGlow {
+    background-image: radial-gradient(ellipse at 0% 50%, rgba(201, 168, 76, 0.12) 0%, transparent 65%);
+  }
+
+  .artistCategory {
+    text-align: left;
+    font-size: 0.65rem;
+    margin-bottom: 0.35rem;
+  }
+
+  .artistName {
+    text-align: left;
+    font-size: 1rem;
+  }
+
+  .artistUnderline {
+    margin-top: 0.35rem;
+  }
+
+  .carouselBtn {
+    display: none;
+  }
+
+  .carouselRow {
+    justify-content: center;
+  }
+
+  .subtitle {
+    font-size: 0.9rem;
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 400px) {
+  .carouselSection {
+    padding: 2rem 0;
+  }
+
+  .carouselCards {
+    max-width: 100%;
+  }
+
+  .artistCard {
+    padding: 1.5rem 1rem;
+    min-height: auto;
+  }
+
+  .artistAvatar {
+    width: 80px;
+    height: 80px;
+  }
+
+  .artistName {
+    font-size: 0.95rem;
+  }
+
+  .title {
+    font-size: clamp(1.6rem, 7vw, 2.25rem);
+  }
+
+  .header {
+    margin-bottom: 2rem;
   }
 }

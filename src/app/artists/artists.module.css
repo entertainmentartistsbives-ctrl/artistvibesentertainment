@@ -936,22 +936,45 @@
 .sectionLabelText { font-size:10px; font-weight:800; letter-spacing:0.2em; text-transform:uppercase; padding:4px 14px; border-radius:6px; }
 
 /* ── RESPONSIVE ────────────────────────────── */
-@media(max-width:900px){
-  .collageGrid{grid-template-columns:1fr 1.2fr 1fr;gap:10px;}
-  .exclusiveCard{grid-template-columns:1fr;height:auto;min-height:520px;}
-  .exclusiveLeft{height:280px;}
-  .exclusiveWrap{padding:1rem 3rem;}
-  .featCarouselWrap{padding:0 3rem;}
-  .featuredRow{grid-template-columns:repeat(2,1fr);gap:14px;}
-  .featCard{height:340px;}
-  .featLoadingGrid{grid-template-columns:repeat(2,1fr);}
-  .featSkeleton{height:340px;}
+@media(max-width:1024px){
+  .collageGrid { grid-template-columns: 1fr 1.2fr 1fr; gap: 14px; }
+  .featuredRow { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .featLoadingGrid { grid-template-columns: repeat(2, 1fr); }
 }
+
+@media(max-width:900px){
+  .exclusiveCard { grid-template-columns: 1fr; height: auto; min-height: auto; }
+  .exclusiveLeft { height: 320px; }
+  .exclusiveRight { padding: 2rem; }
+  .exclusiveWrap { padding: 1rem 2rem; }
+  .featCarouselWrap { padding: 0 2rem; }
+  .featCard { height: 360px; }
+}
+
 @media(max-width:600px){
-  .collageGrid{gap:8px;}
-  .featCarouselWrap{padding:0 2.5rem;}
-  .featuredRow{grid-template-columns:1fr;}
-  .featCard{height:320px;}
-  .featLoadingGrid{grid-template-columns:1fr;}
-  .exclusiveWrap{padding:1rem 2.5rem;}
+  .collageGrid { gap: 10px; }
+  .exclusiveWrap { padding: 1rem 0; }
+  .exclusiveCard { border-radius: 16px; border-left: none; border-right: none; }
+  .exclusiveLeft { height: 260px; }
+  .exclusiveRight { padding: 1.5rem 1.25rem; }
+  .exclusiveName { font-size: 1.8rem; }
+  .exclusiveBio { font-size: 12px; }
+  
+  .featCarouselWrap { padding: 0; }
+  .featuredRow { grid-template-columns: 1fr; gap: 1.25rem; }
+  .featLoadingGrid { grid-template-columns: 1fr; }
+  .featCard { height: 380px; border-radius: 16px; border-left: none; border-right: none; }
+  
+  .featHeading { flex-direction: column; text-align: center; gap: 12px; margin-bottom: 2rem; }
+  .featHeadingLine { display: none; }
+  
+  .navBtn { display: none; } /* Hide side nav buttons on mobile */
+}
+
+@media(max-width:400px){
+  .exclusiveLeft { height: 220px; }
+  .featCard { height: 340px; }
+  .exclusiveName { font-size: 1.5rem; }
+  .exclusiveMeta { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .exclusiveBtns { flex-direction: column; gap: 8px; }
 }

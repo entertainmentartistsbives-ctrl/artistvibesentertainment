@@ -477,9 +477,10 @@
 
   .page {
     grid-template-columns: 1fr;
-    grid-template-rows: 380px auto;
-    height: auto; /* Reset fixed height for mobile */
-    min-height: 700px;
+    grid-template-rows: 280px auto;
+    height: auto;
+    min-height: auto;
+    border-radius: 16px;
   }
 
   .leftPage {
@@ -503,26 +504,185 @@
     width: 44px;
     height: 44px;
   }
-}
 
-@media (max-width: 480px) {
+  .header {
+    margin-bottom: 3rem;
+  }
+
   .section {
-    padding: 3rem 0;
+    padding: 3.5rem 0;
   }
 
-  .bookContainer {
-    flex-direction: column;
+  .artistBio {
+    font-size: 0.85rem;
+    margin-bottom: 1.25rem;
+    -webkit-line-clamp: 3;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 
-  .navBtn {
-    position: relative;
+  .priceBadge {
+    margin-bottom: 1.25rem;
   }
 
-  .bookContainer {
-    gap: 2rem;
+  .artistName {
+    font-size: clamp(1.4rem, 5vw, 2rem);
+    margin-bottom: 0.75rem;
   }
 
   .dots {
-    margin-top: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  /* Reduce stacking page shadows */
+  .pageStack {
+    transform: translate(4px, 4px);
+  }
+
+  .pageStack2 {
+    transform: translate(8px, 8px);
+  }
+}
+
+@media (max-width: 600px) {
+  .section {
+    padding: 2.5rem 0;
+  }
+
+  .bookContainer {
+    gap: 0.75rem;
+  }
+
+  .navBtn {
+    width: 36px;
+    height: 36px;
+  }
+
+  .navBtn svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .page {
+    grid-template-rows: 220px auto;
+    border-radius: 14px;
+  }
+
+  .pageContent {
+    padding: 1.25rem 1.25rem 1.5rem;
+  }
+
+  .artistCategory {
+    font-size: 0.6rem;
+    padding: 3px 10px;
+    margin-bottom: 0.6rem;
+  }
+
+  .artistName {
+    font-size: clamp(1.2rem, 5vw, 1.6rem);
+    margin-bottom: 0.6rem;
+  }
+
+  .artistMeta {
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .metaItem {
+    font-size: 0.75rem;
+  }
+
+  .artistBio {
+    font-size: 0.8rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    padding-left: 0.75rem;
+  }
+
+  .priceBadge {
+    margin-bottom: 1rem;
+  }
+
+  .priceValue {
+    font-size: 1.1rem;
+  }
+
+  .bookBtn {
+    padding: 0.7rem 1.5rem;
+    font-size: 0.8rem;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .pageNumber {
+    font-size: 1.4rem;
+    bottom: 1rem;
+    left: 1rem;
+  }
+
+  .pageNumberTotal {
+    font-size: 0.8rem;
+  }
+
+  .header {
+    margin-bottom: 2rem;
+  }
+
+  .title {
+    font-size: clamp(1.6rem, 7vw, 2.25rem);
+  }
+
+  .subtitle {
+    font-size: 0.88rem;
+    max-width: 90%;
+  }
+
+  .dots {
+    margin-top: 1.25rem;
+  }
+
+  /* Hide stacking pages on small screens */
+  .pageStack2 {
+    display: none;
+  }
+
+  .pageStack {
+    transform: translate(3px, 3px);
+    opacity: 0.5;
+  }
+
+  .ambientGlow {
+    width: 400px;
+    height: 300px;
+  }
+}
+
+@media (max-width: 400px) {
+  .bookContainer {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .navBtn {
+    display: none;
+  }
+
+  .page {
+    grid-template-rows: 200px auto;
+    border-radius: 12px;
+  }
+
+  .pageContent {
+    padding: 1rem 1rem 1.25rem;
+  }
+
+  .bookBtn {
+    padding: 0.6rem 1.25rem;
+    font-size: 0.75rem;
+  }
+
+  .spineCrease {
+    display: none;
   }
 }

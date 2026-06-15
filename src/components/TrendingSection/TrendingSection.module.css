@@ -182,49 +182,92 @@
   line-height: 1.7;
 }
 
-.vectorArt {
-  font-family: 'Inter', sans-serif;
-  font-size: clamp(1.5rem, 4vw, 3rem);
-  font-weight: 800;
-  color: #fff;
-  letter-spacing: 5px;
-  margin-bottom: 0.5rem;
-}
+/* --- MOBILE RESPONSIVE TWEAKS --- */
 
-.photoEditing {
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: #ff0000;
-  letter-spacing: 10px;
-  text-transform: uppercase;
-  background: rgba(255, 0, 0, 0.1);
-  padding: 5px 20px;
-  display: inline-block;
-  border-radius: 4px;
+@media (max-width: 900px) {
+  .collageGrid {
+    height: 500px;
+  }
+  .center {
+    width: 260px;
+    height: 340px;
+  }
+  .topLeft, .topRight, .bottomLeft, .bottomRight {
+    width: 190px;
+    height: 240px;
+  }
+  .bottomLeft { left: 20px; }
+  .bottomRight { right: 20px; }
+  .trendingSection { padding: 5rem 0; }
 }
 
 @media (max-width: 768px) {
   .collageGrid {
     height: auto;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
     padding: 0 1rem;
   }
 
   .artistFrame {
     position: relative;
-    width: 100% !important;
-    height: 250px !important;
-    top: auto !important;
-    left: auto !important;
-    right: auto !important;
-    bottom: auto !important;
+    width: 100%;
+    height: 240px;
+    top: auto;
+    left: auto;
+    right: auto;
+    bottom: auto;
     transform: none !important;
+  }
+  
+  .artistFrame:hover {
+    transform: scale(1.02) !important;
   }
 
   .center {
     grid-column: span 2;
-    height: 350px !important;
+    height: 320px;
+  }
+  
+  .topLeft, .topRight, .bottomLeft, .bottomRight {
+    width: 100%;
+  }
+
+  .contentWrapper {
+    gap: 2.5rem;
+  }
+  
+  .trendingSection {
+    padding: 4rem 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .collageGrid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .artistFrame {
+    height: 300px;
+  }
+
+  .center {
+    grid-column: span 1;
+    height: 360px;
+  }
+  
+  .title {
+    font-size: clamp(1.8rem, 7vw, 2.5rem);
+  }
+  
+  .subtitle {
+    font-size: 0.9rem;
+    max-width: 90%;
+  }
+  
+  .trendingSection {
+    padding: 3rem 0;
   }
 }
