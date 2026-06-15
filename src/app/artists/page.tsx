@@ -724,7 +724,7 @@ function ArtistsDiscoveryContent(){
 
       {/* STICKY FILTER */}
       <section className={s.stickyNav}>
-        <div className="container" style={{padding:'0 2rem'}}>
+        <div className="container">
           {/* Section Tabs */}
           <div className={s.tabBar}>
             {SECTION_TABS.map(tab=>{

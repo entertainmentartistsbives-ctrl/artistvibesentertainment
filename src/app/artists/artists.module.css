@@ -940,6 +940,7 @@
   .collageGrid { grid-template-columns: 1fr 1.2fr 1fr; gap: 14px; }
   .featuredRow { grid-template-columns: repeat(2, 1fr); gap: 16px; }
   .featLoadingGrid { grid-template-columns: repeat(2, 1fr); }
+  .gridContainer { grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
 }
 
 @media(max-width:900px){
@@ -952,6 +953,7 @@
 }
 
 @media(max-width:600px){
+  .gridContainer { grid-template-columns: 1fr; gap: 1.25rem; }
   .collageGrid { gap: 10px; }
   .exclusiveWrap { padding: 1rem 0; }
   .exclusiveCard { border-radius: 16px; border-left: none; border-right: none; }
@@ -969,6 +971,11 @@
   .featHeadingLine { display: none; }
   
   .navBtn { display: none; } /* Hide side nav buttons on mobile */
+  
+  .filterBar { padding: 8px 10px; border-radius: 10px; margin: 10px -1rem 2px; }
+  .filterPill { padding: 6px 12px; font-size: 9px; }
+  .filterLabel { display: none; } /* Hide label on small screens to save space */
+  .filterDivider { display: none; }
 }
 
 @media(max-width:400px){
