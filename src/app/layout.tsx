@@ -20,6 +20,13 @@ export const metadata: Metadata = {
     default: 'Artistvibes Entertainment — Premium Artist & Celebrity Management',
     template: '%s | Artistvibes Entertainment',
   },
+  icons: {
+    icon: [
+      { url: '/logo.png', type: 'image/png' },
+    ],
+    apple: '/logo.png',
+    shortcut: '/logo.png',
+  },
   appleWebApp: {
     capable: true,
     statusBarStyle: 'black-translucent',
