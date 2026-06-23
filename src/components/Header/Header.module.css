@@ -76,7 +76,7 @@
 }
 
 .logoImg {
-  height: 85px;
+  height: 95px;
   width: auto;
   object-fit: contain;
   transition: transform 0.3s ease;
@@ -318,7 +318,7 @@
 }
 
 .mobileLogoImg {
-  height: 48px;
+  height: 54px;
   width: auto;
 }
 

@@ -7,8 +7,8 @@ import {
 } from 'react-icons/fa';
 import './admin.css';
 
-const LogoSVG = () => (
-  <img src="/logo.png" alt="Artistvibes Entertainment" style={{ height: "40px", objectFit: "contain" }} />
+const LogoSVG = ({ height = "90px" }: { height?: string }) => (
+  <img src="/logo.png" alt="Artistvibes Entertainment" style={{ height, width: 'auto', objectFit: "contain", display: 'block' }} />
 );
 
 // Helper to compress large base64 images before sending to backend to avoid 413 Payload Too Large
@@ -649,7 +649,7 @@ export default function AdminDashboard() {
 
         <div className="login-card">
           <div className="login-brand-group" style={{ marginBottom: '20px' }}>
-            <LogoSVG />
+            <LogoSVG height="110px" />
           </div>
           
           <p className="login-subtitle">Please enter your user information.</p>
@@ -755,8 +755,8 @@ export default function AdminDashboard() {
       {/* Sidebar Navigation */}
       <aside className={`admin-sidebar ${mobileMenuOpen ? 'open' : ''}`}>
         <div className="sidebar-brand">
-          <div className="sidebar-brand-row" style={{ display: 'flex', justifyContent: 'center', width: '100%', padding: '10px 0' }}>
-            <LogoSVG />
+          <div className="sidebar-brand-row" style={{ display: 'flex', justifyContent: 'center', width: '100%', padding: '16px 0' }}>
+            <LogoSVG height="90px" />
           </div>
         </div>
 
