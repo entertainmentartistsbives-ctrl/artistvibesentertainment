@@ -3,6 +3,9 @@ import './globals.css';
 import Header from '@/components/Header/Header';
 import Footer from '@/components/Footer/Footer';
 import FloatingContact from '@/components/FloatingContact/FloatingContact';
+import { SITE_ACTIVE } from '@/gateway.config';
+import SiteGateway from '@/components/Gateway/SiteGateway';
+import { getEarlyGatewayScript } from '@/components/Gateway/gateway-head-script';
 
 import type { Viewport } from 'next';
 
@@ -71,13 +74,23 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <script
+          id="bya-gateway-early-script"
+          dangerouslySetInnerHTML={{
+            __html: getEarlyGatewayScript(),
+          }}
+        />
+      </head>
       <body style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
-        <Header />
-        <main style={{ flex: 1, paddingTop: 'var(--header-height)' }}>
-          {children}
-        </main>
-        <Footer />
-        <FloatingContact />
+        <SiteGateway siteActive={SITE_ACTIVE}>
+          <Header />
+          <main style={{ flex: 1, paddingTop: 'var(--header-height)' }}>
+            {children}
+          </main>
+          <Footer />
+          <FloatingContact />
+        </SiteGateway>
       </body>
     </html>
   );
